@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.productTypeBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -66,7 +63,6 @@
             this.tableAdapterManager = new McDonaldAPP_00.ProductTypeDataSetTableAdapters.TableAdapterManager();
             this.productTypeTableAdapter1 = new McDonaldAPP_00.ProductType_ProductDataSetTableAdapters.ProductTypeTableAdapter();
             this.productTableAdapter = new McDonaldAPP_00.ProductType_ProductDataSetTableAdapters.ProductTableAdapter();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingNavigator)).BeginInit();
@@ -80,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeProductDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productType_ProductDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -96,7 +91,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.chart1);
             this.tabPage1.Controls.Add(this.productTypeBindingNavigator);
             this.tabPage1.Controls.Add(this.productTypeDataGridView);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -366,22 +360,6 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(282, 93);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -406,7 +384,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeProductDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productType_ProductDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,7 +423,6 @@
         private ProductType_ProductDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
