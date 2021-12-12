@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label iDLabel;
+            System.Windows.Forms.Label typeIDLabel;
+            System.Windows.Forms.Label descriptionLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label nutritionLabel;
+            System.Windows.Forms.Label valueLabel;
+            System.Windows.Forms.Label unitLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.productTypeBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -76,6 +82,40 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.nutritionFactDataSet = new McDonaldAPP_00.NutritionFactDataSet();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter2 = new McDonaldAPP_00.NutritionFactDataSetTableAdapters.ProductTableAdapter();
+            this.tableAdapterManager2 = new McDonaldAPP_00.NutritionFactDataSetTableAdapters.TableAdapterManager();
+            this.iDTextBox = new System.Windows.Forms.TextBox();
+            this.typeIDTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1TableAdapter = new McDonaldAPP_00.NutritionFactDataSetTableAdapters.DataTable1TableAdapter();
+            this.nutritionListBox = new System.Windows.Forms.ListBox();
+            this.productDataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.valueListBox = new System.Windows.Forms.ListBox();
+            this.productDataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.unitListBox = new System.Windows.Forms.ListBox();
+            this.productDataTable1BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            iDLabel = new System.Windows.Forms.Label();
+            typeIDLabel = new System.Windows.Forms.Label();
+            descriptionLabel = new System.Windows.Forms.Label();
+            nutritionLabel = new System.Windows.Forms.Label();
+            valueLabel = new System.Windows.Forms.Label();
+            unitLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingNavigator)).BeginInit();
@@ -94,6 +134,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nutritionFactDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataTable1BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataTable1BindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -101,6 +150,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -485,6 +535,306 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "description";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(unitLabel);
+            this.tabPage4.Controls.Add(this.unitListBox);
+            this.tabPage4.Controls.Add(valueLabel);
+            this.tabPage4.Controls.Add(this.valueListBox);
+            this.tabPage4.Controls.Add(nutritionLabel);
+            this.tabPage4.Controls.Add(this.nutritionListBox);
+            this.tabPage4.Controls.Add(this.bindingNavigator1);
+            this.tabPage4.Controls.Add(iDLabel);
+            this.tabPage4.Controls.Add(this.iDTextBox);
+            this.tabPage4.Controls.Add(typeIDLabel);
+            this.tabPage4.Controls.Add(this.typeIDTextBox);
+            this.tabPage4.Controls.Add(descriptionLabel);
+            this.tabPage4.Controls.Add(this.descriptionTextBox);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(827, 469);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "nutritionfact";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // nutritionFactDataSet
+            // 
+            this.nutritionFactDataSet.DataSetName = "NutritionFactDataSet";
+            this.nutritionFactDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.nutritionFactDataSet;
+            // 
+            // productTableAdapter2
+            // 
+            this.productTableAdapter2.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager2
+            // 
+            this.tableAdapterManager2.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager2.NutritionFactTableAdapter = null;
+            this.tableAdapterManager2.Product_NutritionTableAdapter = null;
+            this.tableAdapterManager2.ProductTableAdapter = this.productTableAdapter2;
+            this.tableAdapterManager2.UpdateOrder = McDonaldAPP_00.NutritionFactDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(180, 120);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(20, 12);
+            iDLabel.TabIndex = 0;
+            iDLabel.Text = "ID:";
+            // 
+            // iDTextBox
+            // 
+            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource1, "ID", true));
+            this.iDTextBox.Location = new System.Drawing.Point(245, 117);
+            this.iDTextBox.Name = "iDTextBox";
+            this.iDTextBox.Size = new System.Drawing.Size(449, 22);
+            this.iDTextBox.TabIndex = 1;
+            // 
+            // typeIDLabel
+            // 
+            typeIDLabel.AutoSize = true;
+            typeIDLabel.Location = new System.Drawing.Point(180, 148);
+            typeIDLabel.Name = "typeIDLabel";
+            typeIDLabel.Size = new System.Drawing.Size(43, 12);
+            typeIDLabel.TabIndex = 2;
+            typeIDLabel.Text = "type ID:";
+            // 
+            // typeIDTextBox
+            // 
+            this.typeIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource1, "typeID", true));
+            this.typeIDTextBox.Location = new System.Drawing.Point(245, 145);
+            this.typeIDTextBox.Name = "typeIDTextBox";
+            this.typeIDTextBox.Size = new System.Drawing.Size(449, 22);
+            this.typeIDTextBox.TabIndex = 3;
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(180, 176);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(59, 12);
+            descriptionLabel.TabIndex = 4;
+            descriptionLabel.Text = "description:";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource1, "description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(245, 173);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(449, 22);
+            this.descriptionTextBox.TabIndex = 5;
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigator1.BindingSource = this.productBindingSource1;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
+            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem1,
+            this.bindingNavigatorMovePreviousItem1,
+            this.bindingNavigatorSeparator3,
+            this.bindingNavigatorPositionItem1,
+            this.bindingNavigatorCountItem1,
+            this.bindingNavigatorSeparator4,
+            this.bindingNavigatorMoveNextItem1,
+            this.bindingNavigatorMoveLastItem1,
+            this.bindingNavigatorSeparator5,
+            this.bindingNavigatorAddNewItem1,
+            this.bindingNavigatorDeleteItem1});
+            this.bindingNavigator1.Location = new System.Drawing.Point(3, 3);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
+            this.bindingNavigator1.Size = new System.Drawing.Size(821, 25);
+            this.bindingNavigator1.TabIndex = 6;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Text = "移到最前面";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Text = "移到上一個";
+            // 
+            // bindingNavigatorSeparator3
+            // 
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem1
+            // 
+            this.bindingNavigatorPositionItem1.AccessibleName = "位置";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "目前的位置";
+            // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(27, 22);
+            this.bindingNavigatorCountItem1.Text = "/{0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "項目總數";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Text = "移到下一個";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Text = "移到最後面";
+            // 
+            // bindingNavigatorSeparator5
+            // 
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem1
+            // 
+            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
+            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem1.Text = "加入新的";
+            // 
+            // bindingNavigatorDeleteItem1
+            // 
+            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem1.Text = "刪除";
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "Product_DataTable1";
+            this.dataTable1BindingSource.DataSource = this.productBindingSource1;
+            // 
+            // dataTable1TableAdapter
+            // 
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
+            // 
+            // nutritionLabel
+            // 
+            nutritionLabel.AutoSize = true;
+            nutritionLabel.Location = new System.Drawing.Point(191, 223);
+            nutritionLabel.Name = "nutritionLabel";
+            nutritionLabel.Size = new System.Drawing.Size(48, 12);
+            nutritionLabel.TabIndex = 7;
+            nutritionLabel.Text = "nutrition:";
+            // 
+            // nutritionListBox
+            // 
+            this.nutritionListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dataTable1BindingSource, "nutrition", true));
+            this.nutritionListBox.DataSource = this.productDataTable1BindingSource;
+            this.nutritionListBox.DisplayMember = "nutrition";
+            this.nutritionListBox.FormattingEnabled = true;
+            this.nutritionListBox.ItemHeight = 12;
+            this.nutritionListBox.Location = new System.Drawing.Point(245, 223);
+            this.nutritionListBox.Name = "nutritionListBox";
+            this.nutritionListBox.Size = new System.Drawing.Size(120, 184);
+            this.nutritionListBox.TabIndex = 8;
+            this.nutritionListBox.ValueMember = "nutrition";
+            // 
+            // productDataTable1BindingSource
+            // 
+            this.productDataTable1BindingSource.DataMember = "Product_DataTable1";
+            this.productDataTable1BindingSource.DataSource = this.productBindingSource1;
+            // 
+            // valueLabel
+            // 
+            valueLabel.AutoSize = true;
+            valueLabel.Location = new System.Drawing.Point(374, 223);
+            valueLabel.Name = "valueLabel";
+            valueLabel.Size = new System.Drawing.Size(33, 12);
+            valueLabel.TabIndex = 9;
+            valueLabel.Text = "value:";
+            // 
+            // valueListBox
+            // 
+            this.valueListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productDataTable1BindingSource, "value", true));
+            this.valueListBox.DataSource = this.productDataTable1BindingSource1;
+            this.valueListBox.DisplayMember = "value";
+            this.valueListBox.FormattingEnabled = true;
+            this.valueListBox.ItemHeight = 12;
+            this.valueListBox.Location = new System.Drawing.Point(413, 223);
+            this.valueListBox.Name = "valueListBox";
+            this.valueListBox.Size = new System.Drawing.Size(120, 184);
+            this.valueListBox.TabIndex = 10;
+            this.valueListBox.ValueMember = "value";
+            // 
+            // productDataTable1BindingSource1
+            // 
+            this.productDataTable1BindingSource1.DataMember = "Product_DataTable1";
+            this.productDataTable1BindingSource1.DataSource = this.productBindingSource1;
+            // 
+            // unitLabel
+            // 
+            unitLabel.AutoSize = true;
+            unitLabel.Location = new System.Drawing.Point(542, 223);
+            unitLabel.Name = "unitLabel";
+            unitLabel.Size = new System.Drawing.Size(26, 12);
+            unitLabel.TabIndex = 11;
+            unitLabel.Text = "unit:";
+            // 
+            // unitListBox
+            // 
+            this.unitListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productDataTable1BindingSource, "unit", true));
+            this.unitListBox.DataSource = this.productDataTable1BindingSource2;
+            this.unitListBox.DisplayMember = "unit";
+            this.unitListBox.FormattingEnabled = true;
+            this.unitListBox.ItemHeight = 12;
+            this.unitListBox.Location = new System.Drawing.Point(574, 223);
+            this.unitListBox.Name = "unitListBox";
+            this.unitListBox.Size = new System.Drawing.Size(120, 184);
+            this.unitListBox.TabIndex = 12;
+            this.unitListBox.ValueMember = "unit";
+            // 
+            // productDataTable1BindingSource2
+            // 
+            this.productDataTable1BindingSource2.DataMember = "Product_DataTable1";
+            this.productDataTable1BindingSource2.DataSource = this.productBindingSource1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -516,6 +866,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nutritionFactDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataTable1BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataTable1BindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -568,6 +929,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.TabPage tabPage4;
+        private NutritionFactDataSet nutritionFactDataSet;
+        private System.Windows.Forms.BindingSource productBindingSource1;
+        private NutritionFactDataSetTableAdapters.ProductTableAdapter productTableAdapter2;
+        private NutritionFactDataSetTableAdapters.TableAdapterManager tableAdapterManager2;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator4;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
+        private System.Windows.Forms.TextBox iDTextBox;
+        private System.Windows.Forms.TextBox typeIDTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private NutritionFactDataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private System.Windows.Forms.ListBox nutritionListBox;
+        private System.Windows.Forms.BindingSource productDataTable1BindingSource;
+        private System.Windows.Forms.ListBox unitListBox;
+        private System.Windows.Forms.BindingSource productDataTable1BindingSource2;
+        private System.Windows.Forms.ListBox valueListBox;
+        private System.Windows.Forms.BindingSource productDataTable1BindingSource1;
     }
 }
 

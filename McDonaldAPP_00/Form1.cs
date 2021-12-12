@@ -35,6 +35,10 @@ namespace McDonaldAPP_00
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'nutritionFactDataSet.DataTable1' 資料表。您可以視需要進行移動或移除。
+            this.dataTable1TableAdapter.Fill(this.nutritionFactDataSet.DataTable1);
+            // TODO: 這行程式碼會將資料載入 'nutritionFactDataSet.Product' 資料表。您可以視需要進行移動或移除。
+            this.productTableAdapter2.Fill(this.nutritionFactDataSet.Product);
             // TODO: 這行程式碼會將資料載入 'productSearchDataSet.Product' 資料表。您可以視需要進行移動或移除。
             this.productTableAdapter1.Fill(this.productSearchDataSet.Product);
             // TODO: 這行程式碼會將資料載入 'productType_ProductDataSet.Product' 資料表。您可以視需要進行移動或移除。
