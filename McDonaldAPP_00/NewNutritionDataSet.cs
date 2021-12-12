@@ -6,13 +6,13 @@ namespace McDonaldAPP_00
 {
 
 
-    public partial class NutritionFactDataSet
+    public partial class NewNutritionDataSet
     {
     }
 }
 namespace McDonaldAPP_00 {
     
     
-    public partial class NutritionFactDataSet {
+    public partial class NewNutritionDataSet {
     }
 }
