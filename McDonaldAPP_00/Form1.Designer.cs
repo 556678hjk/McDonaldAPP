@@ -63,6 +63,19 @@
             this.tableAdapterManager = new McDonaldAPP_00.ProductTypeDataSetTableAdapters.TableAdapterManager();
             this.productTypeTableAdapter1 = new McDonaldAPP_00.ProductType_ProductDataSetTableAdapters.ProductTypeTableAdapter();
             this.productTableAdapter = new McDonaldAPP_00.ProductType_ProductDataSetTableAdapters.ProductTableAdapter();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.productSearchDataSet = new McDonaldAPP_00.ProductSearchDataSet();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter1 = new McDonaldAPP_00.ProductSearchDataSetTableAdapters.ProductTableAdapter();
+            this.tableAdapterManager1 = new McDonaldAPP_00.ProductSearchDataSetTableAdapters.TableAdapterManager();
+            this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.keywordToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.keywordToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingNavigator)).BeginInit();
@@ -76,12 +89,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeProductDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productType_ProductDataSet)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productSearchDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -360,6 +379,112 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.fillByToolStrip);
+            this.tabPage3.Controls.Add(this.productDataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(827, 469);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "searchproduct";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // productSearchDataSet
+            // 
+            this.productSearchDataSet.DataSetName = "ProductSearchDataSet";
+            this.productSearchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.productSearchDataSet;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.ProductTableAdapter = this.productTableAdapter1;
+            this.tableAdapterManager1.UpdateOrder = McDonaldAPP_00.ProductSearchDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // productDataGridView
+            // 
+            this.productDataGridView.AllowUserToAddRows = false;
+            this.productDataGridView.AllowUserToDeleteRows = false;
+            this.productDataGridView.AutoGenerateColumns = false;
+            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.productDataGridView.DataSource = this.productBindingSource;
+            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.productDataGridView.Location = new System.Drawing.Point(3, 31);
+            this.productDataGridView.Name = "productDataGridView";
+            this.productDataGridView.ReadOnly = true;
+            this.productDataGridView.RowTemplate.Height = 24;
+            this.productDataGridView.Size = new System.Drawing.Size(821, 435);
+            this.productDataGridView.TabIndex = 0;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.keywordToolStripLabel,
+            this.keywordToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(3, 3);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(821, 25);
+            this.fillByToolStrip.TabIndex = 1;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // keywordToolStripLabel
+            // 
+            this.keywordToolStripLabel.Name = "keywordToolStripLabel";
+            this.keywordToolStripLabel.Size = new System.Drawing.Size(58, 22);
+            this.keywordToolStripLabel.Text = "keyword:";
+            // 
+            // keywordToolStripTextBox
+            // 
+            this.keywordToolStripTextBox.Name = "keywordToolStripTextBox";
+            this.keywordToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(49, 22);
+            this.fillByToolStripButton.Text = "Search";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 42;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "typeID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "typeID";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 62;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn5.HeaderText = "description";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -384,6 +509,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productTypeProductDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productType_ProductDataSet)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productSearchDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -423,6 +555,19 @@
         private ProductType_ProductDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TabPage tabPage3;
+        private ProductSearchDataSet productSearchDataSet;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private ProductSearchDataSetTableAdapters.ProductTableAdapter productTableAdapter1;
+        private ProductSearchDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.DataGridView productDataGridView;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripLabel keywordToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox keywordToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
 

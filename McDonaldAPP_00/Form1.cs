@@ -35,12 +35,27 @@ namespace McDonaldAPP_00
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'productSearchDataSet.Product' 資料表。您可以視需要進行移動或移除。
+            this.productTableAdapter1.Fill(this.productSearchDataSet.Product);
             // TODO: 這行程式碼會將資料載入 'productType_ProductDataSet.Product' 資料表。您可以視需要進行移動或移除。
             this.productTableAdapter.Fill(this.productType_ProductDataSet.Product);
             // TODO: 這行程式碼會將資料載入 'productType_ProductDataSet.ProductType' 資料表。您可以視需要進行移動或移除。
             this.productTypeTableAdapter1.Fill(this.productType_ProductDataSet.ProductType);
             // TODO: 這行程式碼會將資料載入 'productTypeDataSet.ProductType' 資料表。您可以視需要進行移動或移除。
             this.productTypeTableAdapter.Fill(this.productTypeDataSet.ProductType);
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.productTableAdapter1.FillBy(this.productSearchDataSet.Product, keywordToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }
